@@ -10,8 +10,8 @@ import { API_URL } from "@/utils/env";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Initial System",
-  description: "A modern authentication system built with Next.js and FastAPI",
+  title: "MiniTimer",
+  description: "A simple and efficient timer application for all your timing needs",
   icons: {
     icon: `${API_URL}/assets/default/favicon.ico`,
     shortcut: `${API_URL}/assets/default/favicon.ico`,

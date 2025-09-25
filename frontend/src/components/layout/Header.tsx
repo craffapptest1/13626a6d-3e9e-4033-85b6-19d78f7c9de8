@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useAuth } from "@/hooks/useAuth";
-import { FiUser, FiLogOut, FiLogIn, FiUserPlus } from "react-icons/fi";
+import { FiUser, FiLogOut, FiLogIn, FiUserPlus, FiClock, FiSettings, FiHelpCircle } from "react-icons/fi";
 import Image from "next/image";
 import { API_URL } from "@/utils/env";
 
@@ -14,28 +14,41 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0 flex items-center">
-            {/* Dynamic logo from S3 */}
             <div className="flex items-center space-x-3">
-              <Image
-                src={`${API_URL}/assets/default/craftapp-logo.svg`}
-                alt="Initial System Logo"
-                width={32}
-                height={32}
-                className="h-8 w-8"
-                onError={(e) => {
-                  e.currentTarget.style.display = "none";
-                }}
-              />
+              <FiClock className="h-8 w-8 text-primary-600" />
               <Link
                 href="/"
                 className="text-xl font-bold text-primary-600 hover:text-primary-500 transition"
               >
-                Initial System
+                MiniTimer
               </Link>
             </div>
           </div>
 
           <nav className="flex items-center space-x-4">
+            <Link
+              href="/"
+              className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition"
+            >
+              Timer
+            </Link>
+
+            <Link
+              href="/settings"
+              className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition"
+            >
+              <FiSettings className="inline mr-1" />
+              Settings
+            </Link>
+
+            <Link
+              href="/help"
+              className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition"
+            >
+              <FiHelpCircle className="inline mr-1" />
+              Help
+            </Link>
+
             {isAuthenticated ? (
               <>
                 <Link
